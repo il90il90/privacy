@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeretGram â€” Privacy Policy</title>
+<meta name="description" content="Privacy policy for SeretGram TV (com.il90.seretgram) by Israel Cohen.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header class="top"><a href="../">&larr; All privacy policies</a></header>
+<h1>SeretGram TV &mdash; Privacy Policy</h1>
+<p class="meta">App package: <code>com.il90.seretgram</code><br>Developer: Israel Cohen<br>Effective date: 28 October 2026</p>
+<div class="summary"><strong>In short</strong>
+<ul>
+<li>SeretGram is an Android TV media centre for videos in <strong>your own Telegram account</strong>, plus Live TV playlists you add. On a phone it is a remote for the TV.</li>
+<li>Your Telegram session, media index, watch history, downloads and settings stay on your TV. We do not run analytics, ads or tracking, and do not receive your Telegram data.</li>
+<li>To work, the app connects directly to Telegram, to the licence service <strong>PWFAuth</strong> (licence key + a hashed device ID), to movie-information and subtitle services (titles of what you watch), and to GitHub for updates.</li>
+</ul></div>
+
+<h2>Who we are</h2>
+<p>SeretGram is developed and published by Israel Cohen, an individual developer ("we", "us"). SeretGram is an independent third-party app and is not affiliated with, endorsed by or sponsored by Telegram.</p>
+
+<h2>Your Telegram account</h2>
+<p>You sign in to your own Telegram account on the TV with your phone number and the login code Telegram sends you (and your Telegram password if you have one). These are sent <strong>directly to Telegram</strong> through Telegram's official TDLib library and are not sent to us. Telegram's privacy policy applies to your account. The resulting Telegram session, the index of your media and any downloads are stored in the app's private storage on the TV. SeretGram reads, streams and indexes media; it never deletes, edits or sends messages in your Telegram account. To end the session, sign out in the app, terminate the TV's session from Telegram's <em>Active sessions</em> list on any of your devices, or uninstall the app.</p>
+
+<h2>Information stored on the TV</h2>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Why</th><th>Leaves the device?</th></tr></thead><tbody><tr><td>Telegram session and media index (chat names, file names, titles)</td><td>Browse and play your media</td><td>Only to/from Telegram</td></tr><tr><td>Watch history, Continue Watching, favourites, settings</td><td>Resume playback; Continue Watching row on the TV home screen</td><td>No</td></tr><tr><td>Live TV playlists you add (URLs may include your IPTV provider credentials)</td><td>Play your channels</td><td>Only to the playlist/stream servers you added</td></tr><tr><td>Licence key and licence status</td><td>Check that this TV is licensed</td><td>Key sent to PWFAuth (see below)</td></tr><tr><td>Diagnostic log (steps, counts, timings, errors &mdash; no titles, chat names or search words)</td><td>Troubleshooting</td><td>No; it is written to the device's Downloads folder only if you export it</td></tr><tr><td>Paired phones</td><td>Let your phone act as a remote</td><td>No</td></tr></tbody></table></div>
+<p>App data is excluded from Android backup.</p>
+
+<h2>Services the app connects to</h2>
+<p>Requests go directly from your TV to these services. Each sees your IP address and the app's name and version as with any internet request, and handles data under its own privacy policy. We do not receive this data.</p>
+<div class="table-wrap"><table><thead><tr><th>Service</th><th>Purpose</th><th>What is sent</th></tr></thead><tbody><tr><td>Telegram</td><td>Sign-in, listing and streaming your media</td><td>Your phone number and login code at sign-in; then normal Telegram client traffic for your account</td></tr><tr><td>PWFAuth (pwfauth.com)</td><td>Licence activation and periodic re-checks</td><td>Your licence key and a device identifier: a <strong>hash</strong> of the Android ID combined with the app's package name (the raw Android ID is not sent)</td></tr><tr><td>seretgram.com</td><td>Only if the owner/admin password is entered in the licence screen</td><td>That password, to unlock an admin licence</td></tr><tr><td>The Movie Database (TMDB), Wikidata, Wikimedia Commons, TVmaze, Simkl (images via wsrv.nl)</td><td>Posters, descriptions, genres and episode information</td><td>Titles, years and season/episode numbers parsed from your media's file names, or an ID such as an IMDb ID</td></tr><tr><td>OpenSubtitles, SubDL, Wizdom, Gestdown, Stremio OpenSubtitles / Ktuvit add-ons, Cinemeta</td><td>Finding subtitles for what you play</td><td>The title, year, season/episode or IMDb ID, and the subtitle languages you chose</td></tr><tr><td>Live TV playlist and stream servers you add</td><td>Playing your channels and logos</td><td>Requests to the URLs you entered</td></tr><tr><td>GitHub (api.github.com, github.com)</td><td>Checking for and downloading app updates (versions installed outside Google Play)</td><td>An anonymous request; nothing about you or your library</td></tr></tbody></table></div>
+
+<h2>Licensing and payments</h2>
+<p>A licence key is activated and re-checked with PWFAuth, a third-party licensing service, which binds the key to the hashed device identifier described above so that a key is used on the permitted number of devices. If you buy a licence, payment is made outside the app through PayPal, and trial requests or receipts are sent by you through Telegram; those services process that information under their own policies, and we receive the payment details PayPal provides to sellers and whatever you send us.</p>
+
+<h2>The phone remote</h2>
+<p>When SeretGram runs on a phone or tablet it acts as a remote for your TV over your local network. It is paired by scanning a QR code on the TV with Google Play services' code scanner, which handles the camera itself and gives the app only the code's text (SeretGram does not request the camera permission). The TV <strong>never sends your private one-to-one chats</strong>, Saved Messages or secret chats, or anything in them, to a paired phone; only channels, groups and bots are shared with the remote. You can also type a licence key or a playlist on your phone and send it to the TV over the local network.</p>
+
+<h2>Voice search</h2>
+<p>If your device has a speech recognizer, the search field offers a microphone. Speech is handled by the device's own speech-recognition service (for example, Google), which returns text to SeretGram; SeretGram does not request the microphone permission itself.</p>
+
+<h2>Other apps</h2>
+<p>You can choose to play a video in another installed player app; the stream is then served to that app from the TV itself. The companion app Touchless may send commands to SeretGram, which asks for your approval first.</p>
+
+<h2>Permissions</h2>
+<ul>
+<li><strong>Internet, network state</strong> &mdash; Telegram, the services above, Live TV and the phone remote.</li>
+<li><strong>Foreground service (media playback / data sync), notifications, wake lock</strong> &mdash; playback, the first library load and update notices.</li>
+<li><strong>Write TV home-screen programs</strong> &mdash; your Continue Watching row on the Android TV home screen.</li>
+<li><strong>Display over other apps</strong> &mdash; only if you grant it on the device, so a phone's &ldquo;Open&rdquo;/&ldquo;Play&rdquo; can bring SeretGram to the front. SeretGram draws nothing over other apps.</li>
+<li><strong>Install packages / update without user action</strong> &mdash; installing an update you accepted (versions installed outside Google Play).</li>
+</ul>
+<p>SeretGram does not request access to your location, contacts, camera, microphone or SMS.</p>
+
+<h2>Advertising, analytics and tracking</h2>
+<p>SeretGram contains no advertising SDK, analytics SDK or crash-reporting service and does not track you across apps or websites.</p>
+
+<h2>Children</h2>
+<p>SeretGram is not directed at children and is intended for users who can lawfully use Telegram.</p>
+
+<h2>Security</h2>
+<p>Connections to Telegram, PWFAuth, GitHub and the information services use encryption (HTTPS/TLS or Telegram's own protocol). Communication with a paired phone stays on your local network and requires pairing approval on the TV. IPTV credentials in playlist URLs are masked wherever they are shown.</p>
+
+<h2>Your choices and rights</h2>
+<p>You can end the Telegram session (in the app or from Telegram's Active sessions), remove playlists, clear the cache and downloads, unpair phones, or uninstall the app to remove everything stored on the TV. To ask about a licence record held with PWFAuth, or any other request about your data, contact us below.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app's data practices change, this page will be updated and the effective date above will change. Material changes will be reflected here before, or at the same time as, the app version that introduces them.</p>
+<h2>Contact</h2>
+<p>Questions or requests about this policy or about your data: <a href="mailto:il90il90@gmail.com">il90il90@gmail.com</a> (Israel Cohen).</p>
+<footer>SeretGram TV &middot; Privacy policy &middot; Effective 28 October 2026</footer>
+</main>
+</body>
+</html>

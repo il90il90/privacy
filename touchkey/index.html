@@ -75,6 +75,14 @@
 </ul>
 <p>TouchKey's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
+<h2 id="voice">Voice typing (optional)</h2>
+<p>If you give a key the &ldquo;Voice typing&rdquo; action, pressing it records your voice until the recording ends (a pause, a second press, a time limit or the Done button you chose), turns the speech into text and types the text into the field that has the cursor. While it records, Android shows a &ldquo;Listening&rdquo; notification and TouchKey shows a small bubble with the words it hears.</p>
+<ul>
+<li>The speech is recognised by your device's speech recognition service, which on most devices is provided by Google and may send the audio to Google to turn it into text, under Google's own privacy terms. With &ldquo;Only on this device&rdquo; on, TouchKey asks for recognition on the device where the device supports it.</li>
+<li>TouchKey does not save the recording or the text, and sends neither to us. The text goes into the field you chose; if no field can take it, it is placed on the clipboard so you can paste it.</li>
+<li>The microphone is used only while a recording you started runs. TouchKey asks for the microphone permission when you save a voice typing action, and you can withdraw it in Android's settings at any time.</li>
+</ul>
+
 <h2 id="updates">Checking for updates</h2>
 <p>TouchKey can look for a newer version of itself on GitHub, where its releases are published (<a href="https://github.com/il90il90/touchkey-releases/releases">github.com/il90il90/touchkey-releases</a>). When &ldquo;Check automatically&rdquo; is on (Settings &rsaquo; About and updates; on by default) it does so once a day and when you open the app (at most every few hours), and also whenever you tap &ldquo;Check for updates&rdquo;.</p>
 <p>A check is one ordinary web request to github.com. It carries no account, no identifier and nothing about your setups or your device beyond what any web request carries (your IP address and the app name &ldquo;TouchKey&rdquo; as the browser name), and it is subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>. A new version is downloaded only when you tap &ldquo;Update now&rdquo;; TouchKey checks that it is TouchKey, newer, unchanged and signed by the same developer, and Android asks you to confirm before it installs. Turn &ldquo;Check automatically&rdquo; off to stop the daily check.</p>
@@ -88,6 +96,7 @@
 <li><strong>Accessibility service &ldquo;TouchKey screen actions&rdquo;</strong> (optional) &mdash; to touch the screen and to find a button by its name, as described above.</li>
 <li><strong>See installed apps</strong> &mdash; to show your apps, with their icons, when you choose an app to open or an app in which a key behaves differently, and to list an app's screens when you build an &ldquo;activity or broadcast&rdquo; action. The list is read on the device and is not sent anywhere.</li>
 <li><strong>Internet, network and Wi-Fi state</strong> &mdash; for the HTTP and web-address actions you create, the optional Google Drive backup, the update check, and Power mode's connection to the device itself.</li>
+<li><strong>Microphone</strong> (optional) &mdash; only for voice typing, while a recording you started runs (see <a href="#voice">Voice typing</a>). It comes with a foreground service and its &ldquo;Listening&rdquo; notification, which Android requires for the microphone.</li>
 <li><strong>Install apps</strong> &mdash; only to install a TouchKey update you chose to install; Android asks you to confirm each time.</li>
 <li><strong>Local network, nearby Wi-Fi devices (never for location), multicast</strong> &mdash; Power mode only: to find the device's own Wireless debugging service.</li>
 <li><strong>Notifications</strong> &mdash; the box where you type the pairing code while setting up Power mode, and a note when a new version of TouchKey is out.</li>
@@ -96,7 +105,7 @@
 <li><strong>Vibrate</strong> &mdash; the optional short buzz when a long press is recognised.</li>
 <li><strong>Change secure settings</strong> &mdash; cannot be granted by tapping; Power mode grants it so TouchKey can switch Wireless debugging back on after a restart and turn its own accessibility service back on if Android switched it off.</li>
 </ul>
-<p>The app does not request access to your contacts, location, microphone, camera, photos or messages.</p>
+<p>The app does not request access to your contacts, location, camera, photos or messages. It asks for the microphone only if you use voice typing.</p>
 
 <h2>Children</h2>
 <p>TouchKey is a general-audience utility and is not directed at children. We collect no data from anyone.</p>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TouchKey &#8212; Privacy Policy</title>
+<meta name="description" content="Privacy policy for TouchKey (com.il90.touchkey) by Israel Cohen.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<header class="top"><a href="../">&larr; All privacy policies</a> &middot; <a href="about/">About TouchKey</a></header>
+<h1>TouchKey &mdash; Privacy Policy</h1>
+<p class="meta">App package: <code>com.il90.touchkey</code><br>Developer: Israel Cohen<br>Effective date: 22 November 2026</p>
+<div class="summary"><strong>In short</strong>
+<ul>
+<li>TouchKey lets you choose what a hardware key does on a tap, a double tap and a long press: the buttons of your device, a keyboard, a remote or a game controller.</li>
+<li>We have <strong>no server and no accounts</strong> and receive none of your data. No ads, no analytics, no crash-reporting service, no tracking.</li>
+<li>Your key setups stay on your device. They leave it only when you save them to a file, or turn on the optional backup to <strong>your own Google Drive</strong>, or when an action you made yourself contacts an address you typed.</li>
+</ul></div>
+
+<h2>Who we are</h2>
+<p>TouchKey is developed and published by Israel Cohen, an individual developer ("we", "us"). We do not operate any server for this app and do not receive any data from it.</p>
+
+<h2>Information the app handles</h2>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Where it is kept</th><th>Sent to us?</th></tr></thead><tbody>
+<tr><td>Your setups: which keys you mapped, on which device (its name and Android's identifier for that input device), what each kind of press does, quick menus, timings and appearance settings</td><td>On your device, in the app's private storage</td><td>No</td></tr>
+<tr><td>What you typed into an action: web addresses, HTTP requests (address, headers, body), shell commands, text to type, intent details</td><td>On your device, as part of your setups, exactly as you typed it</td><td>No</td></tr>
+<tr><td>Names and package names of the apps you chose in an action or in a per-app setup</td><td>On your device, as part of your setups</td><td>No</td></tr>
+<tr><td>Hardware key presses, and which app is in front</td><td>Handled in memory at the moment they happen; not saved</td><td>No</td></tr>
+<tr><td>The pairing key for Power mode (if you turn it on)</td><td>On your device, encrypted with the Android Keystore</td><td>No</td></tr>
+</tbody></table></div>
+<p>HTTP headers and bodies you save (for example an access token for your smart home) are stored with your setups and are included in any file or backup you make. Treat such a file like the token itself.</p>
+<p>Removing a key, a menu or the app's data in Android's settings deletes it. Uninstalling TouchKey deletes everything it stored on the device.</p>
+
+<h2>Accessibility service</h2>
+<p>Android only lets an app see hardware key presses through an accessibility service, so TouchKey asks you to turn its service on. The service is used for exactly two things:</p>
+<ul>
+<li><strong>Key presses.</strong> It receives hardware key events so it can recognise the keys you mapped and run the action you chose. Keys you did not map are passed on untouched. Key presses are not recorded, stored or sent anywhere. The Key tester screen shows the presses it receives while it is open, and forgets them when you leave it.</li>
+<li><strong>The app in front.</strong> It notes which app is open so that a key can behave differently in an app you chose. Only the app's package name is used, in memory.</li>
+</ul>
+<p>The service does not read the content of your screen, your messages, passwords or what you type into other apps, and it does not collect or share any of this.</p>
+
+<h2>Actions you create</h2>
+<p>A key does what you tell it to. If you create an action that contacts something outside the app, the request goes directly from your device to the destination you entered, and we receive nothing:</p>
+<ul>
+<li><strong>HTTP request</strong> and <strong>Open a web address</strong>: the address, headers and body you typed are sent to that address when you press the key (or use &ldquo;Send test&rdquo;). That service sees your IP address and handles the request under its own privacy policy. Addresses starting with <code>http://</code> are sent without encryption.</li>
+<li><strong>Open an app</strong>, <strong>activity or broadcast</strong>, <strong>shell command</strong>, <strong>type text</strong>: these run on your device only.</li>
+</ul>
+
+<h2>Power mode (optional)</h2>
+<p>Power mode connects TouchKey to <em>your device's own</em> Wireless debugging so it can press real keys and run shell commands for the actions you made. The connection is from the device to itself; nothing is sent to another device or to us. The local-network and nearby-devices permissions are used only to find and reach that service on the device itself, never for location. If you set up a key for when the screen is off, Power mode listens to hardware key presses while the screen is off, only to recognise that key; these presses are handled in memory and are not saved.</p>
+
+<h2 id="google-drive">Google Drive backup and Google user data (optional)</h2>
+<p>You can connect TouchKey to your Google account to back up your setups to your own Google Drive. This is off until you tap &ldquo;Connect Google Drive&rdquo; and approve Google's consent screen.</p>
+<ul>
+<li><strong>What TouchKey can access.</strong> Only the permission <code>https://www.googleapis.com/auth/drive.appdata</code>: its own hidden application-data folder in your Drive. TouchKey cannot see, read, change or delete any other file in your Drive, and it does not access your name, email address, contacts, Gmail, photos or any other Google data.</li>
+<li><strong>What is stored there.</strong> Backup files containing your setups (the items in the table above, except the Power mode pairing key), the device model, and a random identifier created by the app so backups from different devices can be told apart. At most 7 backups per device are kept; older ones are deleted automatically.</li>
+<li><strong>How it is used.</strong> Only to save your backups, list them and restore the one you choose, on this device or another one where you connect the same Google account.</li>
+<li><strong>Who receives it.</strong> Nobody but you and Google Drive. The files go directly from your device to Google over an encrypted connection. We have no server and never receive your backups or your Google sign-in. Access is granted to the app on your device by Google Play services; TouchKey does not store your Google password or a long-lived sign-in token.</li>
+<li><strong>No other use.</strong> Google user data is not sold, not shared with third parties, not used for advertising, and not used to develop, improve or train AI or machine-learning models. No person reads it.</li>
+<li><strong>Deleting it.</strong> To delete the backups, open Google Drive on the web &rsaquo; Settings &rsaquo; Manage apps &rsaquo; TouchKey &rsaquo; Options &rsaquo; &ldquo;Delete hidden app data&rdquo;. To stop the access, remove TouchKey at <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>. You can also turn the daily backup off in the app at any time.</li>
+</ul>
+<p>TouchKey's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+<h2>Backup to a file</h2>
+<p>&ldquo;Save to a file&rdquo; writes your setups to the place you choose with Android's own file picker. From then on the file is yours; TouchKey does not keep track of it.</p>
+
+<h2>Permissions</h2>
+<ul>
+<li><strong>Accessibility service</strong> &mdash; to see hardware key presses and the app in front, as described above.</li>
+<li><strong>See installed apps</strong> &mdash; to show your apps, with their icons, when you choose an app to open or an app in which a key behaves differently, and to list an app's screens when you build an &ldquo;activity or broadcast&rdquo; action. The list is read on the device and is not sent anywhere.</li>
+<li><strong>Internet, network and Wi-Fi state</strong> &mdash; for the HTTP and web-address actions you create, the optional Google Drive backup, and Power mode's connection to the device itself.</li>
+<li><strong>Local network, nearby Wi-Fi devices (never for location), multicast</strong> &mdash; Power mode only: to find the device's own Wireless debugging service.</li>
+<li><strong>Notifications</strong> &mdash; the box where you type the pairing code while setting up Power mode.</li>
+<li><strong>Run at startup</strong> &mdash; to start Power mode again after the device restarts.</li>
+<li><strong>Wake lock</strong> &mdash; a few seconds awake to run the action of a key pressed while the screen is off.</li>
+<li><strong>Vibrate</strong> &mdash; the optional short buzz when a long press is recognised.</li>
+<li><strong>Change secure settings</strong> &mdash; cannot be granted by tapping; Power mode grants it so TouchKey can switch Wireless debugging back on after a restart and turn its own accessibility service back on if Android switched it off.</li>
+</ul>
+<p>The app does not request access to your contacts, location, microphone, camera, photos or messages.</p>
+
+<h2>Children</h2>
+<p>TouchKey is a general-audience utility and is not directed at children. We collect no data from anyone.</p>
+
+<h2>Your choices and rights</h2>
+<p>We hold no personal data about you, so there is nothing for us to give you, correct or delete. Everything the app keeps is on your device or in your own Google Drive, and you can delete it at any time as described above. Every optional feature (Power mode, Google Drive backup, actions that use the internet) can be left off.</p>
+
+<h2>Changes to this policy</h2>
+<p>If the app's data practices change, this page will be updated and the effective date above will change. Material changes will be reflected here before, or at the same time as, the app version that introduces them.</p>
+<h2>Contact</h2>
+<p>Questions or requests about this policy or about your data: <a href="mailto:il90il90@gmail.com">il90il90@gmail.com</a> (Israel Cohen).</p>
+<footer>TouchKey &middot; Privacy policy &middot; Effective 22 November 2026</footer>
+</main>
+</body>
+</html>

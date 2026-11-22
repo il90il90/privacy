@@ -16,6 +16,7 @@
 <ul>
 <li>TouchKey lets you choose what a hardware key does on a tap, a double tap and a long press: the buttons of your device, a keyboard, a remote or a game controller.</li>
 <li>We have <strong>no server and no accounts</strong> and receive none of your data. No ads, no analytics, no crash-reporting service, no tracking.</li>
+<li>Tapping on the screen for you (a place you picked, or a button found by its name) is optional and uses a second accessibility service that is off until you turn it on.</li>
 <li>Your key setups stay on your device. They leave it only when you save them to a file, or turn on the optional backup to <strong>your own Google Drive</strong>, or when an action you made yourself contacts an address you typed.</li>
 </ul></div>
 
@@ -27,19 +28,30 @@
 <tr><td>Your setups: which keys you mapped, on which device (its name and Android's identifier for that input device), what each kind of press does, quick menus, timings and appearance settings</td><td>On your device, in the app's private storage</td><td>No</td></tr>
 <tr><td>What you typed into an action: web addresses, HTTP requests (address, headers, body), shell commands, text to type, intent details</td><td>On your device, as part of your setups, exactly as you typed it</td><td>No</td></tr>
 <tr><td>Names and package names of the apps you chose in an action or in a per-app setup</td><td>On your device, as part of your setups</td><td>No</td></tr>
+<tr><td>For screen actions you create: the place you picked (as a position on the screen), or the name or id of the button you chose and the app it belongs to</td><td>On your device, as part of your setups</td><td>No</td></tr>
+<tr><td>What is on the screen (names, ids and positions of buttons and other items), only if you turned on &ldquo;TouchKey screen actions&rdquo;</td><td>Read in memory at the moment a key looks for a button, or while you choose one; not saved</td><td>No</td></tr>
 <tr><td>Hardware key presses, and which app is in front</td><td>Handled in memory at the moment they happen; not saved</td><td>No</td></tr>
 <tr><td>The pairing key for Power mode (if you turn it on)</td><td>On your device, encrypted with the Android Keystore</td><td>No</td></tr>
 </tbody></table></div>
 <p>HTTP headers and bodies you save (for example an access token for your smart home) are stored with your setups and are included in any file or backup you make. Treat such a file like the token itself.</p>
 <p>Removing a key, a menu or the app's data in Android's settings deletes it. Uninstalling TouchKey deletes everything it stored on the device.</p>
 
-<h2>Accessibility service</h2>
-<p>Android only lets an app see hardware key presses through an accessibility service, so TouchKey asks you to turn its service on. The service is used for exactly two things:</p>
+<h2>Accessibility services</h2>
+<p>TouchKey has two accessibility services. They are separate so that remapping keys never needs access to your screen.</p>
+<h3>TouchKey (keys)</h3>
+<p>Android only lets an app see hardware key presses through an accessibility service, so TouchKey asks you to turn this service on. It is used for exactly two things:</p>
 <ul>
 <li><strong>Key presses.</strong> It receives hardware key events so it can recognise the keys you mapped and run the action you chose. Keys you did not map are passed on untouched. Key presses are not recorded, stored or sent anywhere. The Key tester screen shows the presses it receives while it is open, and forgets them when you leave it.</li>
 <li><strong>The app in front.</strong> It notes which app is open so that a key can behave differently in an app you chose. Only the app's package name is used, in memory.</li>
 </ul>
-<p>The service does not read the content of your screen, your messages, passwords or what you type into other apps, and it does not collect or share any of this.</p>
+<p>This service does not read the content of your screen, your messages, passwords or what you type into other apps, and it does not collect or share any of this.</p>
+<h3 id="screen-actions">TouchKey screen actions (optional)</h3>
+<p>This second service is off unless you turn it on. You only need it if you want a key to tap on the screen for you. It handles no key presses. It is used for exactly two things:</p>
+<ul>
+<li><strong>Touching the screen.</strong> It performs the tap, double tap, long press or swipe at the place you picked.</li>
+<li><strong>Finding a button by its name.</strong> When a key you set up asks for a button, and while you choose a button with &ldquo;Show the button on the screen&rdquo;, it reads what Android describes on the screen at that moment: the names, ids and positions of buttons and other items, in whichever app is open. This can include text that is shown on the screen. It is used in memory to find the button and is then discarded.</li>
+</ul>
+<p>Nothing this service reads is saved, logged or sent anywhere, with one exception that you make yourself: the name or id of the button you chose, and the app it belongs to, are saved in your setup so the key can find it again. The service does not watch the screen in the background; it looks only at those moments.</p>
 
 <h2>Actions you create</h2>
 <p>A key does what you tell it to. If you create an action that contacts something outside the app, the request goes directly from your device to the destination you entered, and we receive nothing:</p>
@@ -68,7 +80,8 @@
 
 <h2>Permissions</h2>
 <ul>
-<li><strong>Accessibility service</strong> &mdash; to see hardware key presses and the app in front, as described above.</li>
+<li><strong>Accessibility service &ldquo;TouchKey&rdquo;</strong> &mdash; to see hardware key presses and the app in front, as described above.</li>
+<li><strong>Accessibility service &ldquo;TouchKey screen actions&rdquo;</strong> (optional) &mdash; to touch the screen and to find a button by its name, as described above.</li>
 <li><strong>See installed apps</strong> &mdash; to show your apps, with their icons, when you choose an app to open or an app in which a key behaves differently, and to list an app's screens when you build an &ldquo;activity or broadcast&rdquo; action. The list is read on the device and is not sent anywhere.</li>
 <li><strong>Internet, network and Wi-Fi state</strong> &mdash; for the HTTP and web-address actions you create, the optional Google Drive backup, and Power mode's connection to the device itself.</li>
 <li><strong>Local network, nearby Wi-Fi devices (never for location), multicast</strong> &mdash; Power mode only: to find the device's own Wireless debugging service.</li>
@@ -84,7 +97,7 @@
 <p>TouchKey is a general-audience utility and is not directed at children. We collect no data from anyone.</p>
 
 <h2>Your choices and rights</h2>
-<p>We hold no personal data about you, so there is nothing for us to give you, correct or delete. Everything the app keeps is on your device or in your own Google Drive, and you can delete it at any time as described above. Every optional feature (Power mode, Google Drive backup, actions that use the internet) can be left off.</p>
+<p>We hold no personal data about you, so there is nothing for us to give you, correct or delete. Everything the app keeps is on your device or in your own Google Drive, and you can delete it at any time as described above. Every optional feature (screen actions, Power mode, Google Drive backup, actions that use the internet) can be left off.</p>
 
 <h2>Changes to this policy</h2>
 <p>If the app's data practices change, this page will be updated and the effective date above will change. Material changes will be reflected here before, or at the same time as, the app version that introduces them.</p>

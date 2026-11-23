@@ -11,7 +11,7 @@
 <main>
 <header class="top"><a href="../">&larr; All privacy policies</a> &middot; <a href="about/">About TouchKey</a></header>
 <h1>TouchKey &mdash; Privacy Policy</h1>
-<p class="meta">App package: <code>com.il90.touchkey</code><br>Developer: Israel Cohen<br>Effective date: 23 November 2026</p>
+<p class="meta">App package: <code>com.il90.touchkey</code><br>Developer: Israel Cohen<br>Effective date: 24 November 2026</p>
 <div class="summary"><strong>In short</strong>
 <ul>
 <li>TouchKey lets you choose what a hardware key does on a tap, a double tap and a long press: the buttons of your device, a keyboard, a remote or a game controller.</li>
@@ -83,6 +83,15 @@
 <li>The microphone is used only while a recording you started runs. TouchKey asks for the microphone permission when you save a voice typing action, and you can withdraw it in Android's settings at any time.</li>
 </ul>
 
+<h2 id="triggers">Triggers (optional)</h2>
+<p>A trigger runs the actions you chose when something happens on the device: a Bluetooth device connects or disconnects, Wi-Fi connects or disconnects, the charger is plugged in or out, the battery drops to a level, power saving turns on or off, the screen turns on or off, the phone is unlocked, headphones are plugged in or out, an app opens or closes, a time of day, or the device starts. TouchKey notices these events on the device while its accessibility service runs, keeps only what it needs to see a change (for example the last battery level, or which network was connected), and does not record, send or share them.</p>
+<ul>
+<li><strong>Bluetooth (&ldquo;Nearby devices&rdquo;)</strong> &mdash; asked only when you make a Bluetooth trigger: to list your paired devices so you can choose one, and to know which device connected. The device you choose (its name and address) is saved in your trigger.</li>
+<li><strong>Location</strong> &mdash; asked only if you make a Wi-Fi trigger for one named network: Android tells an app a Wi-Fi network's name only with location permission. TouchKey never reads or uses your location. The network name you enter is saved in your trigger.</li>
+<li><strong>Alarms &amp; reminders</strong> (optional) &mdash; lets time triggers run at the exact minute.</li>
+</ul>
+<p>Triggers are part of your setups, so they are included in files you save and in your Google Drive backups.</p>
+
 <h2 id="updates">Checking for updates</h2>
 <p>TouchKey can look for a newer version of itself on GitHub, where its releases are published (<a href="https://github.com/il90il90/touchkey-releases/releases">github.com/il90il90/touchkey-releases</a>). When &ldquo;Check automatically&rdquo; is on (Settings &rsaquo; About and updates; on by default) it does so once a day and when you open the app (at most every few hours), and also whenever you tap &ldquo;Check for updates&rdquo;.</p>
 <p>A check is one ordinary web request to github.com. It carries no account, no identifier and nothing about your setups or your device beyond what any web request carries (your IP address and the app name &ldquo;TouchKey&rdquo; as the browser name), and it is subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>. A new version is downloaded only when you tap &ldquo;Update now&rdquo;; TouchKey checks that it is TouchKey, newer, unchanged and signed by the same developer, and Android asks you to confirm before it installs. Turn &ldquo;Check automatically&rdquo; off to stop the daily check.</p>
@@ -103,9 +112,10 @@
 <li><strong>Run at startup</strong> &mdash; to start Power mode again after the device restarts.</li>
 <li><strong>Wake lock</strong> &mdash; a few seconds awake to run the action of a key pressed while the screen is off.</li>
 <li><strong>Vibrate</strong> &mdash; the optional short buzz when a long press is recognised.</li>
+<li><strong>Bluetooth (nearby devices), location, alarms &amp; reminders</strong> (optional) &mdash; only for the triggers you make, as described in <a href="#triggers">Triggers</a>.</li>
 <li><strong>Change secure settings</strong> &mdash; cannot be granted by tapping; Power mode grants it so TouchKey can switch Wireless debugging back on after a restart and turn its own accessibility service back on if Android switched it off.</li>
 </ul>
-<p>The app does not request access to your contacts, location, camera, photos or messages. It asks for the microphone only if you use voice typing.</p>
+<p>The app does not request access to your contacts, camera, photos or messages. It asks for the microphone only if you use voice typing, and for location only if you make a Wi-Fi trigger for a named network (to learn the network's name, never your location).</p>
 
 <h2>Children</h2>
 <p>TouchKey is a general-audience utility and is not directed at children. We collect no data from anyone.</p>
@@ -117,7 +127,7 @@
 <p>If the app's data practices change, this page will be updated and the effective date above will change. Material changes will be reflected here before, or at the same time as, the app version that introduces them.</p>
 <h2>Contact</h2>
 <p>Questions or requests about this policy or about your data: <a href="mailto:il90il90@gmail.com">il90il90@gmail.com</a> (Israel Cohen).</p>
-<footer>TouchKey &middot; Privacy policy &middot; Effective 23 November 2026</footer>
+<footer>TouchKey &middot; Privacy policy &middot; Effective 24 November 2026</footer>
 </main>
 </body>
 </html>

@@ -48,7 +48,7 @@
 <h3 id="screen-actions">TouchKey screen actions (optional)</h3>
 <p>This second service is off unless you turn it on, or, with Power mode on, until a step you set up needs to tap on the screen (for example &ldquo;Tap a button&rdquo;, or opening Gemini Live): then TouchKey switches it on by itself so the step can run, and you can switch it off again in Android's Accessibility settings. You only need it if you want a key to tap on the screen for you. It handles no key presses. It is used for exactly two things:</p>
 <ul>
-<li><strong>Touching the screen.</strong> It performs the tap, double tap, long press or swipe at the place you picked.</li>
+<li><strong>Touching the screen.</strong> It performs the tap, double tap, long press or swipe at the place you picked, and the &ldquo;Scroll&rdquo; action&rsquo;s finger strokes. To check that a scroll really moved the screen, it compares what Android describes on the screen (as below) just before and just after, in memory, and keeps nothing.</li>
 <li><strong>Finding a button by its name.</strong> When a key you set up asks for a button, and while you choose a button with &ldquo;Show the button on the screen&rdquo;, it reads what Android describes on the screen at that moment: the names, ids and positions of buttons and other items, in whichever app is open. This can include text that is shown on the screen. It is used in memory to find the button and is then discarded.</li>
 </ul>
 <p>Nothing this service reads is saved, logged or sent anywhere, with one exception that you make yourself: the name or id of the button you chose, and the app it belongs to, are saved in your setup so the key can find it again. The service does not watch the screen in the background; it looks only at those moments.</p>
